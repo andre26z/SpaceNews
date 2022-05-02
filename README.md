@@ -35,29 +35,28 @@ Construir aplicação web ou mobile capaz de requisitar e obter dados do [Spacef
 
 ## Aplicação
 
-- A tela inicial deve exibir uma lista (ou tabela) os `articles` mais recentes, exibindo `title` e `publishedAt`.
+- A tela inicial deve exibir em uma lista (ou tabela) os `articles` mais recentes, exibindo `title` e `publishedAt`.
 - A tela inicial deve conter botões para paginar os `articles`.
 - A tela inicial deve conter um select que permita ao usuário configurar o tamanho da lista, de forma a listar 10 (padrão), 25, 50 ou 100 `articles` por vez.
-- A tela inicial deve conter um input para pesquisa por texto do `title`, utilizando endpoint `https://api.spaceflightnewsapi.net/v3/articles?title_contains=TEXTO`
+- A tela inicial deve conter um input para pesquisa por texto do `title`, utilizando endpoint `https://api.spaceflightnewsapi.net/v3/articles?title_contains=TEXTO`, incluindo "texto com espaços e outros caracteres especiais".
 - A tela inicial deve permitir ao usuário a pesquisa de artigos por data de publicação entre duas datas (inicial e final).
 - Ao clicar em um elemento da lista, a aplicação deve navegar para uma página que exiba todos os detalhes do `article`, e também a imagem deste.
-- A página de detalhes de `article` deve conter botões para navegar para o próximo e para o anterior (ordenados por `id`). Caso próximo ou anterior não exista, não deve haver tal botão.
+- A página de detalhes de `article` deve conter botões para navegar para o próximo e para o anterior (ordenados por `id`, notando que é possível haver saltos no número do id.
 
 ### Requisitos de código
 
 - Responsividade
 - Clean Code
-- Typescript
 
 ### Aprimoramentos adicionais da aplicação (opcional)
 
 A aplicação criada para o desafio pode ser aprimorada com recursos pensados por você. A seguir, foram listadas algumas sugestões do que poderia ser feito:
 
 - Fazer o projeto em `React Native`, ou ambos (`React` e `React Native`)
+- Utilizar `Material-UI` ou `MUI` para a aplicação web; ou `React Native Paper` para a aplicação mobile
+- Typescript
+- Testes
 - Documentação
-- Utilizar `Material-UI` ou `MUI` para a aplicação web
-- Utilizar `React Native Paper` para a aplicação mobile
-- Aprimorar as opções de filtragem, utilizando outras queries
 
 ### Quais ferramentas posso utilizar para resolver o desafio?
 
