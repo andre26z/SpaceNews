@@ -65,8 +65,7 @@ Com exceção do ReactJS, React Native e React Router, não será especificado u
 ### Mas, afinal, quais ferramentas a Sharenergy utiliza?
 
 * [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) e [Typescript](https://www.typescriptlang.org/)
-* Front-end: [ReactJS](https://reactjs.org/) (web) e [React Native](https://reactnative.dev/) (mobile)
-* Roteamento: [react-router](https://reactrouter.com/), [react-router-dom](https://www.npmjs.com/package/react-router-dom) e [react-router-native](https://www.npmjs.com/package/react-router-native)
+* Front-end: [ReactJS](https://reactjs.org/) (web) e [React Native](https://reactnative.dev/) (mobile) com [react-router](https://reactrouter.com/), [react-router-dom](https://www.npmjs.com/package/react-router-dom) e [react-router-native](https://www.npmjs.com/package/react-router-native) para roteamento
 * Back-end: [Node.js](https://nodejs.org/en/) e [Go](https://golang.org/)
 * Banco de dados: [MongoDB](https://www.mongodb.com/) do lado do servidor e [Minimongo](https://guide.meteor.com/collections.html) do lado do cliente (cache)
 * Validação de dados: [Schema-utils](https://www.npmjs.com/package/schema-utils) 
@@ -74,6 +73,7 @@ Com exceção do ReactJS, React Native e React Router, não será especificado u
 * Gerenciamento de Repositórios: [NX](https://nx.dev/)
 * Gráficos: [Recharts](https://recharts.org/en-US/)
 * UI: [CSS 3](https://www.w3.org/Style/CSS/), [Material-UI](https://v4.mui.com/), [MUI](https://mui.com/), [react-native-paper](https://callstack.github.io/react-native-paper/) e [Reflexbox](https://rebassjs.org/reflexbox/)
+* Sistema Operacional (principal): [Linux](https://www.linux.org/), sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
 
 ## O que devo entregar?
 
