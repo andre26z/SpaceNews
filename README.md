@@ -60,7 +60,7 @@ A aplicação criada para o desafio pode ser aprimorada com recursos pensados po
 
 ### Quais ferramentas posso utilizar para resolver o desafio?
 
-Com exceção do ReactJS, React Native, React Router DOM, React Router Native e Typescript, não será especificado um conjunto de ferramentas específico que pode ser usado. Não obstante, será considerado como um diferencial caso você adote as mesmas ferramentas com as quais nós trabalhamos. 
+Com exceção do ReactJS, React Native e React Router, não será especificado um conjunto de ferramentas específico que pode ser usado. Não obstante, será considerado como um diferencial caso você adote as mesmas ferramentas com as quais nós trabalhamos. 
 
 ### Mas, afinal, quais ferramentas a Sharenergy utiliza?
 
