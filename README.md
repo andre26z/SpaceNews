@@ -73,7 +73,7 @@ Com exceção do ReactJS, React Native e React Router, não será especificado u
 * Gerenciamento de Repositórios: [NX](https://nx.dev/)
 * Gráficos: [Recharts](https://recharts.org/en-US/)
 * UI: [CSS 3](https://www.w3.org/Style/CSS/), [Material-UI](https://v4.mui.com/), [MUI](https://mui.com/), [react-native-paper](https://callstack.github.io/react-native-paper/) e [Reflexbox](https://rebassjs.org/reflexbox/)
-* Sistema Operacional (principal): [Linux](https://www.linux.org/), sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
+* Sistema Operacional (principal): [Linux](https://www.linux.org/), também sendo possível utilizar o [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) (WSL)
 
 ## O que devo entregar?
 
