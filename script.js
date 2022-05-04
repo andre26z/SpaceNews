@@ -20,12 +20,21 @@ function busca(e) {
 			for (const noticias of jsondata) {
 				console.log(noticias);
 			}
+
+			 jsondata.forEach((article) => {
+				let li = document.createElement("li");
+				let a = document.createElement("a");
+				a.setAttribute("href", article.url);
+				a.setAttribute("target", "_blank");
+				a.textContent = article.title;
+				li.appendChild(a);
+				listanoticias.appendChild(li);
+			});
 		} catch (e) {
 			console.log("error");
 		}
 	})();
 }
-
 
 // 	fetch(url)
 // 		.then((res) => {
