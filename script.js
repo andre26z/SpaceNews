@@ -46,24 +46,3 @@ function busca(e) {
 	})();
 }
 
-// 	fetch(url)
-// 		.then((res) => {
-// 			return res.json();
-// 		})
-// 		.then((data) => {
-// 			console.log(data);
-// 			data.articles.forEach((article) => {
-// 				let li = document.createElement("li");
-// 				let a = document.createElement("a");
-// 				a.setAttribute("href", article.url);
-// 				a.setAttribute("target", "_blank");
-// 				a.textContent = article.title;
-// 				li.appendChild(a);
-// 				listanoticias.appendChild(li);
-// 			});
-// 			console.log(data.articles);
-// 		})
-// 		.catch(function (e) {
-// 			console.log('erro');
-// 		});
-// }
