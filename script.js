@@ -14,7 +14,7 @@ function busca(e) {
 	(async function () {
 		try {
 			const url = await fetch(
-				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}%20`
+				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=100`
 			);
 			const jsondata = await url.json();
 			console.log(jsondata);
@@ -44,5 +44,11 @@ function busca(e) {
 			console.log("error");
 		}
 	})();
-}
 
+    // const limit = function maxsearch() {
+
+
+        
+    // }
+
+}
