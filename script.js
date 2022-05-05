@@ -6,11 +6,12 @@ const listanoticias = document.querySelector(".news-list");
 const defaultdata = new Intl.DateTimeFormat("pt-BR");
 
 boxpesquisa.addEventListener("submit", busca);
+
 function getlimit() {
 	var limite = document.getElementById("select").value;
-    console.log(limite);
+	console.log(limite);
 }
-
+getlimit();
 
 function busca(e) {
 	listanoticias.innerHTML = "";
@@ -19,7 +20,7 @@ function busca(e) {
 	(async function () {
 		try {
 			const url = await fetch(
-				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${limite}`
+				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=100`
 			);
 			const jsondata = await url.json();
 			console.log(jsondata);
@@ -32,18 +33,21 @@ function busca(e) {
 				let a = document.createElement("a");
 				let label = document.createElement("label");
 				let img = document.createElement("img");
+				let div = document.createElement("div");
 				img.src = article.imageUrl;
 				let data = new Date(article.publishedAt);
 				let datacorreta = defaultdata.format(data);
 				console.log(datacorreta);
 				a.setAttribute("href", article.url);
 				a.setAttribute("target", "_blank");
+				div.setAttribute("class","container");
 				a.textContent = article.title;
 				label.textContent = " publicado em: " + "" + datacorreta;
+				listanoticias.appendChild(div);
+				div.appendChild(li);
 				li.appendChild(a);
-				listanoticias.appendChild(li);
-				listanoticias.appendChild(img);
-				listanoticias.appendChild(label);
+				li.appendChild(img);
+				li.appendChild(label);
 			});
 		} catch (e) {
 			console.log("error");
