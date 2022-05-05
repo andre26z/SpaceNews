@@ -6,6 +6,11 @@ const listanoticias = document.querySelector(".news-list");
 const defaultdata = new Intl.DateTimeFormat("pt-BR");
 
 boxpesquisa.addEventListener("submit", busca);
+function getlimit() {
+	var limite = document.getElementById("select").value;
+    console.log(limite);
+}
+
 
 function busca(e) {
 	listanoticias.innerHTML = "";
@@ -14,7 +19,7 @@ function busca(e) {
 	(async function () {
 		try {
 			const url = await fetch(
-				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=100`
+				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${limite}`
 			);
 			const jsondata = await url.json();
 			console.log(jsondata);
@@ -45,10 +50,7 @@ function busca(e) {
 		}
 	})();
 
-    // const limit = function maxsearch() {
+	// const limit = function maxsearch() {
 
-
-        
-    // }
-
+	// }
 }
