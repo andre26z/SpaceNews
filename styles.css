@@ -6,7 +6,7 @@
   list-style: none;
 }
 
-ul {
+.mainsection ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,15 +18,208 @@ ul {
           flex-direction: column;
 }
 
-ul li {
-  border: black;
-  border-color: black solid;
+.mainsection ul li {
+  border: 1px solid grey;
+  display: -ms-grid;
+  display: grid;
+  gap: 2px;
 }
 
-ul li img {
+.mainsection ul li img {
   max-width: 120px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+* {
+  font-family: "Josefin Sans";
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #ffffff;
+}
+
+body a {
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+body ul {
+  list-style: none;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1170px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 425px) {
+  .header {
+    padding: 1.1rem;
+  }
+}
+
+.header-brand {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.header-navbar ul {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 425px) {
+  .header-navbar ul {
+    display: none;
+  }
+}
+
+.header-navbar ul li {
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.header-navbar ul li .active {
+  color: #2fff8dea;
+}
+
+.header-navbar ul li a:hover {
+  color: #2fff8dea;
+}
+
+.header-social-meida ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .header-social-meida ul {
+    display: none;
+  }
+}
+
+.header-social-meida ul li {
+  margin: 0 1rem;
+}
+
+.header-social-meida ul li a:hover {
+  color: #fff;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 350px;
+  height: 350px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+}
+
+@media (max-width: 425px) {
+  .gallery {
+    width: 90%;
+    margin-bottom: 6%;
+  }
+}
+
+.gallery-card {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-card:hover {
+  background-size: 180%;
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5));
+}
+
+.gallery-card-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.gallery-card-btn {
+  padding: 0.6rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gallery-card-btn:hover {
+  background-color: #fff;
+  color: #000;
 }
 /*# sourceMappingURL=styles.css.map */
