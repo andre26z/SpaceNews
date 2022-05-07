@@ -1,10 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,400;1,700&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	list-style: none;
 }
+
+#navbar_top {
+	background-color: black;
+	justify-content: center;
+	color: white;
+}
+
 .mainsection {
+	#maincontainer {
+		justify-content: center;
+	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;
@@ -22,15 +34,8 @@
 	}
 }
 
-* {
-	font-family: "Josefin Sans";
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
 body {
-	background-color: #000;
+	background-color: rgb(0, 0, 0);
 	color: #ffffff;
 }
 body a {
@@ -48,16 +53,19 @@ body ul {
 	max-width: 1170px;
 	padding: 1.5rem 0;
 	margin: 0 auto;
+
+	.header-brand {
+		font-size: 3rem;
+		color: #fff;
+		font-family: "Space Mono", monospace;
+	}
 }
 @media (max-width: 425px) {
 	.header {
 		padding: 1.1rem;
 	}
 }
-.header-brand {
-	font-size: 3rem;
-	color: #fff;
-}
+
 .header-navbar ul {
 	height: 100%;
 	display: flex;
@@ -75,10 +83,10 @@ body ul {
 	font-size: 0.8rem;
 }
 .header-navbar ul li .active {
-	color: #2fff8dea;
+	color: #86d7de;
 }
 .header-navbar ul li a:hover {
-	color: #2fff8dea;
+	color: #86d7de;
 }
 .header-social-meida ul {
 	display: flex;
@@ -100,14 +108,15 @@ body ul {
 
 .gallery {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	max-width: 350px;
-	height: 350px;
+	flex-direction: row;
+	justify-content: flex-start;
+	max-width: 100%;
+	height: 100%;
 	padding: 1.5rem 0;
-	margin: 0 auto;
+	margin-top: 50px;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: start;
+	gap: 15px;
 	padding: 0;
 }
 @media (max-width: 425px) {
@@ -117,24 +126,24 @@ body ul {
 	}
 }
 .gallery-card {
-	width: 100%;
-	height: 100%;
+	width: 400px;
+	height: 300px;
 	margin-bottom: 4%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	color: #fff;
-	filter: grayscale(100%);			transition: 0.7s;
+	filter: grayscale(67%);
+	transition: 0.7s;
 	background-size: 150%;
 	background-position: center;
 	background-repeat: no-repeat;
 	&:hover {
-					background-size: 180%;
-					filter: grayscale(0%);
-					background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5));
-				}
-		
+		background-size: 180%;
+		filter: grayscale(0%);
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5));
+	}
 }
 .gallery-card-title {
 	font-size: 2rem;
@@ -144,7 +153,9 @@ body ul {
 .gallery-card-btn {
 	padding: 0.6rem 2rem;
 	border: 2px solid #fff;
-	color: #fff;
+	color: rgb(0, 0, 0);
+	background-color: white;
+	text-shadow: none;
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -152,5 +163,5 @@ body ul {
 .gallery-card-btn:hover {
 	background-color: #fff;
 	color: #000;
+	text-shadow: none;
 }
-

@@ -1,14 +1,32 @@
 "use strict";
 
+document.addEventListener("DOMContentLoaded", function () {
+	window.addEventListener("scroll", function () {
+		if (window.scrollY > 50) {
+			document.getElementById("navbar_top").classList.add("fixed-top");
+			// navbar_height = document.querySelector('.navbar');
+			// document.body.style.paddingTop = navbar_height;
+		} else {
+			document.getElementById("navbar_top").classList.remove("fixed-top");
+			document.body.style.paddingTop = 0;
+		}
+	});
+});
 const boxpesquisa = document.querySelector(".search");
 const pesquisa = document.querySelector(".input");
 const listanoticias = document.querySelector(".gallery");
 const defaultdata = new Intl.DateTimeFormat("pt-BR");
-
 boxpesquisa.addEventListener("submit", busca);
 
+function getdata() {
+	let datapesquisa = document.querySelector("#pesquisapordata").value;
+	console.log(datapesquisa);
+	return datapesquisa;
+}
+console.log(getdata());
+
 function getlimit() {
-	var limite = document.getElementById("select").value;
+	let limite = document.getElementById("select").value;
 	return limite;
 }
 getlimit();
@@ -18,10 +36,12 @@ function busca(e) {
 	listanoticias.innerHTML = "";
 	e.preventDefault();
 	let topico = pesquisa.value;
+
 	(async function () {
 		try {
 			const url = await fetch(
 				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${getlimit()}`
+				// `https://api.spaceflightnewsapi.net/v3/articles?publishedAt_contains=${getdata()}&_limit=${getlimit()}
 			);
 			const jsondata = await url.json();
 			console.log(jsondata);
@@ -39,9 +59,8 @@ function busca(e) {
 				let bgimage = img.src;
 				let data = new Date(article.publishedAt);
 				let datacorreta = defaultdata.format(data);
-				// console.log(datacorreta);
 
-				card.setAttribute("class", "gallery-card col-md-2");
+				card.setAttribute("class", "gallery-card");
 				card.setAttribute("style", "background-image: url(" + bgimage + ")");
 				a.setAttribute("href", article.url);
 				a.setAttribute("target", "_blank");
@@ -50,9 +69,9 @@ function busca(e) {
 				a.textContent = article.title;
 				label.textContent = " publicado em: " + "" + datacorreta;
 
+				listanoticias.appendChild(titulo);
 				listanoticias.appendChild(card);
 				card.appendChild(a);
-				card.appendChild(titulo);
 				card.appendChild(label);
 			});
 		} catch (e) {
