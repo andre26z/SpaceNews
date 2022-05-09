@@ -17,49 +17,56 @@
 <body>
 
     <header class="header">
-        <!-- <i class="fa-solid fa-rocket-launch"></i> -->
         <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark">
-
-
-            <img src="imgs/rocket.png" alt="">
-            <a href="" class="header-brand"> </i> SPACE FLIGHT NEWS</a>
-
+            <a href="#top"><img src="imgs/rocket.png" alt=""></a>
+            <a href="#top" class="header-brand"> </i> SPACE FLIGHT NEWS</a>
             <nav class="header-navbar">
                 <ul>
                     <li>
-                        <a href="#" class="active">Home</a>
+                        <a href="#top" class="active">Home</a>
                     </li>
                     <li><a href="#">Sobre</a>
                     </li>
                 </ul>
             </nav>
     </header>
-
-    <section class="mainsection">
+    
+    <section class="mainsection flex-wrap">
         <div class="container d-flex" id="maincontainer">
             <form class="search col-9" action="">
                 <input class="input" type="text" placeholder="Digite sua Pesquisa">
-                <input type="date" id="pesquisapordata" onchange="getdata()" value="2022-05-06">
-                <select id="select" onchange="getlimit()">
+                <label for="pesquisapordatamais">Desde</label>
+                <input type="date" id="pesquisapordatamais" onchange="getdatamais()" value="2022-04-09">
+                <label for="pesquisapordatamenos">Até</label>
+                <input type="date" id="pesquisapordatamenos" onchange="getdatamenos()" value="2022-05-06">
+                <label class="" for="select">Quantidade de Respostas</label>
+                <select class="col" id="select" onchange="getlimit()">
                     <option selected="selected" value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
+                    <option value="200">200</option>
                 </select>
-                <input type="submit" value="Procurar" class="btn btn-light" id="">
+                <input type="submit" value="Procurar" class="" id="">
             </form>
+            
         </div>
         <main>
             <div class="container gallery col-9">
             </div>
         </main>
-
-
-    </section>
-
+       </section>
     </main>
+    <div hidden id="spinner"></div>
+    <section id="mainpage">
+        <div class="container">
+            <H1>Bem Vindos ao Space Flight News!</H1>
+            <h3>As últimas notícias quanto a busca incessante pelo desconhecido em apenas um lugar!</h3>
+            <p>Este site disponibiliza a busca por keywords, datas e também ajusta a quantidade de notícias que deseja receber!</p>
+        </div>
+    </section>
     <footer>
-
+        Site desenvolvido por André Santos @andreaugsantos
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script/script.js"></script>

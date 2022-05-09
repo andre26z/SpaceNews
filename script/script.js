@@ -1,10 +1,12 @@
 "use strict";
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("scroll", function () {
 		if (window.scrollY > 50) {
 			document.getElementById("navbar_top").classList.add("fixed-top");
-			navbar_height = document.querySelector('.navbar');
+			let navbar_height = document.querySelector('.navbar');
 			document.body.style.paddingTop = navbar_height;
 		} else {
 			document.getElementById("navbar_top").classList.remove("fixed-top");
@@ -18,12 +20,19 @@ const listanoticias = document.querySelector(".gallery");
 const defaultdata = new Intl.DateTimeFormat("pt-BR");
 boxpesquisa.addEventListener("submit", busca);
 
-function getdata() {
-	let datapesquisa = document.querySelector("#pesquisapordata").value;
-	console.log(datapesquisa);
-	return datapesquisa;
+function getdatamenos() {
+	let datapesquisamenos = document.querySelector("#pesquisapordatamenos").value;
+	// console.log(datapesquisamenos);
+	return datapesquisamenos;
 }
-console.log(getdata());
+console.log(getdatamenos());
+
+function getdatamais() {
+	let datapesquisamais = document.querySelector("#pesquisapordatamais").value;
+	// console.log(datapesquisamais);
+	return datapesquisamais;
+}
+console.log(getdatamais());
 
 function getlimit() {
 	let limite = document.getElementById("select").value;
@@ -36,18 +45,19 @@ function busca(e) {
 	listanoticias.innerHTML = "";
 	e.preventDefault();
 	let topico = pesquisa.value;
+	spinner.removeAttribute("hidden");
 
 	(async function () {
 		try {
 			let url = `https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${getlimit()}`;
 
-			if (getdata()) {
+			if (getdatamais()) {
 				url =
 					url +
-					`&publishedAt_lt=${getdata()}T23:59:59.999Z`;
-				// `&publishedAt_gt=${getdata()}T00:00:00.000Z&publishedAt_lt=${getdata()}T23:59:59.999Z`;
+					`&publishedAt_lt=${getdatamenos()}T23:59:59.999Z&publishedAt_gt=${getdatamais()}T00:00:00.000Z`;
+					// `&publishedAt_gt=${getdatamais()}T00:00:00.000Z&publishedAt_lt=${getdatamenos()}T23:59:59.999Z`;
 			}
-
+			
 			const req = await fetch(url);
 			const jsondata = await req.json();
 			console.log(jsondata);
@@ -58,7 +68,6 @@ function busca(e) {
 			jsondata.forEach((article) => {
 				let card = document.createElement("div");
 				let a = document.createElement("a");
-				let titulo = document.createElement("h2");
 				let img = document.createElement("img");
 				let label = document.createElement("label");
 				img.src = article.imageUrl;
@@ -75,10 +84,11 @@ function busca(e) {
 				a.textContent = article.title;
 				label.textContent = " publicado em: " + "" + datacorreta;
 
-				listanoticias.appendChild(titulo);
+				
 				listanoticias.appendChild(card);
 				card.appendChild(a);
 				card.appendChild(label);
+				spinner.setAttribute("hidden", "");
 			});
 		} catch (e) {
 			console.log("error");
