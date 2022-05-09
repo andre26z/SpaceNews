@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("scroll", function () {
 		if (window.scrollY > 50) {
 			document.getElementById("navbar_top").classList.add("fixed-top");
-			// navbar_height = document.querySelector('.navbar');
-			// document.body.style.paddingTop = navbar_height;
+			navbar_height = document.querySelector('.navbar');
+			document.body.style.paddingTop = navbar_height;
 		} else {
 			document.getElementById("navbar_top").classList.remove("fixed-top");
 			document.body.style.paddingTop = 0;
@@ -39,11 +39,17 @@ function busca(e) {
 
 	(async function () {
 		try {
-			const url = await fetch(
-				`https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${getlimit()}`
-				// `https://api.spaceflightnewsapi.net/v3/articles?publishedAt_contains=${getdata()}&_limit=${getlimit()}
-			);
-			const jsondata = await url.json();
+			let url = `https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${getlimit()}`;
+
+			if (getdata()) {
+				url =
+					url +
+					`&publishedAt_lt=${getdata()}T23:59:59.999Z`;
+				// `&publishedAt_gt=${getdata()}T00:00:00.000Z&publishedAt_lt=${getdata()}T23:59:59.999Z`;
+			}
+
+			const req = await fetch(url);
+			const jsondata = await req.json();
 			console.log(jsondata);
 			for (const noticias of jsondata) {
 				console.log(noticias);
