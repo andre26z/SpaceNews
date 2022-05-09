@@ -1,5 +1,10 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,400;1,700&display=swap");
+@font-face {
+  font-family: rangers;
+  src: url(fonts/rangers.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -77,9 +82,9 @@ body ul {
 }
 
 .header .header-brand {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #fff;
-  font-family: "Space Mono", monospace;
+  font-family: rangers;
   text-align: center;
 }
 
@@ -166,6 +171,7 @@ body ul {
 #mainpage .container {
   text-align: center;
   vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .gallery {

@@ -1,10 +1,8 @@
 "use strict";
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("scroll", function () {
-		if (window.scrollY > 50) {
+		if (window.scrollY > 70) {
 			document.getElementById("navbar_top").classList.add("fixed-top");
 			let navbar_height = document.querySelector('.navbar');
 			document.body.style.paddingTop = navbar_height;
@@ -50,21 +48,18 @@ function busca(e) {
 	(async function () {
 		try {
 			let url = `https://api.spaceflightnewsapi.net/v3/articles?title_contains=${topico}&_limit=${getlimit()}`;
-
 			if (getdatamais()) {
 				url =
 					url +
 					`&publishedAt_lt=${getdatamenos()}T23:59:59.999Z&publishedAt_gt=${getdatamais()}T00:00:00.000Z`;
 					// `&publishedAt_gt=${getdatamais()}T00:00:00.000Z&publishedAt_lt=${getdatamenos()}T23:59:59.999Z`;
 			}
-			
-			const req = await fetch(url);
+						const req = await fetch(url);
 			const jsondata = await req.json();
 			console.log(jsondata);
 			for (const noticias of jsondata) {
 				console.log(noticias);
 			}
-
 			jsondata.forEach((article) => {
 				let card = document.createElement("div");
 				let a = document.createElement("a");
@@ -74,17 +69,13 @@ function busca(e) {
 				let bgimage = img.src;
 				let data = new Date(article.publishedAt);
 				let datacorreta = defaultdata.format(data);
-
 				card.setAttribute("class", "gallery-card");
 				card.setAttribute("style", "background-image: url(" + bgimage + ")");
 				a.setAttribute("href", article.url);
 				a.setAttribute("target", "_blank");
 				a.setAttribute("class", "gallery-card-btn");
-
 				a.textContent = article.title;
 				label.textContent = " publicado em: " + "" + datacorreta;
-
-				
 				listanoticias.appendChild(card);
 				card.appendChild(a);
 				card.appendChild(label);

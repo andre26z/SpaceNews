@@ -2,6 +2,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,400;1,700&display=swap");
 
+@font-face {
+	font-family: rangers;
+	src: url(fonts/rangers.otf);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -57,9 +62,9 @@ body ul {
 	margin: 0 auto;
 
 	.header-brand {
-		font-size: 3rem;
+		font-size: 4rem;
 		color: #fff;
-		font-family: "Space Mono", monospace;
+		font-family: rangers;
 		text-align: center;
 	}
 }
@@ -109,11 +114,11 @@ body ul {
 	color: #fff;
 }
 #mainpage {
-	 display: block;
-    background: #0000;
-    height:600px;
-    width:100%;
-    box-sizing:border-box;
+	display: block;
+	background: #0000;
+	height: 600px;
+	width: 100%;
+	box-sizing: border-box;
 	margin-bottom: 50px;
 	background-image: url("imgs/bground.png");
 	background-size: 40vh;
@@ -122,6 +127,9 @@ body ul {
 	.container {
 		text-align: center;
 		vertical-align: middle;
+		font-family: Arial, Helvetica, sans-serif
+		
+		
 	}
 }
 .gallery {
@@ -187,32 +195,32 @@ footer {
 	text-align: end;
 }
 #spinner:not([hidden]) {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #spinner::after {
-  content: "";
-  width: 80px;
-  height: 80px;
-  border: 2px solid #f3f3f3;
-  border-top: 3px solid #f25a41;
-  border-radius: 100%;
-  will-change: transform;
-  animation: spin 1s infinite linear
+	content: "";
+	width: 80px;
+	height: 80px;
+	border: 2px solid #f3f3f3;
+	border-top: 3px solid #f25a41;
+	border-radius: 100%;
+	will-change: transform;
+	animation: spin 1s infinite linear;
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
