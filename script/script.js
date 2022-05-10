@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("scroll", function () {
 		if (window.scrollY > 70) {
 			document.getElementById("navbar_top").classList.add("fixed-top");
-			let navbar_height = document.querySelector('.navbar');
+			let navbar_height = document.querySelector(".navbar");
 			document.body.style.paddingTop = navbar_height;
 		} else {
 			document.getElementById("navbar_top").classList.remove("fixed-top");
@@ -43,6 +43,7 @@ function busca(e) {
 	listanoticias.innerHTML = "";
 	e.preventDefault();
 	let topico = pesquisa.value;
+
 	spinner.removeAttribute("hidden");
 
 	(async function () {
@@ -51,10 +52,10 @@ function busca(e) {
 			if (getdatamais()) {
 				url =
 					url +
-					`&publishedAt_lt=${getdatamenos()}T23:59:59.999Z&publishedAt_gt=${getdatamais()}T00:00:00.000Z`;
-					// `&publishedAt_gt=${getdatamais()}T00:00:00.000Z&publishedAt_lt=${getdatamenos()}T23:59:59.999Z`;
+					`&publishedAt_lt=${getdatamenos()}T23:59:59.999Z&publishedAt_gt=${getdatamais()}T00:00:00.000Z/count`;
+				// `&publishedAt_gt=${getdatamais()}T00:00:00.000Z&publishedAt_lt=${getdatamenos()}T23:59:59.999Z`;
 			}
-						const req = await fetch(url);
+			const req = await fetch(url);
 			const jsondata = await req.json();
 			console.log(jsondata);
 			for (const noticias of jsondata) {
@@ -76,6 +77,7 @@ function busca(e) {
 				a.setAttribute("class", "gallery-card-btn");
 				a.textContent = article.title;
 				label.textContent = " publicado em: " + "" + datacorreta;
+
 				listanoticias.appendChild(card);
 				card.appendChild(a);
 				card.appendChild(label);
@@ -85,4 +87,11 @@ function busca(e) {
 			console.log("error");
 		}
 	})();
+	if (!spinner.classList.contains("hidden")) {
+		setTimeout(() => {
+			spinner.setAttribute("hidden", "");
+		}, "5000");
+
+		setTimeout();
+	}
 }
